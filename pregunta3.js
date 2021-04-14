@@ -3,18 +3,18 @@
 // si la longitud del array es < 3 se debe retornar undefined
 
 const greater3 = nums => {
-    let retorno = undefined
+    var retorno = 0;
     if(nums.length >= 2){
         orden = nums.sort((a, b) => b - a);
         let i = 2
-        while(orden[i] = orden[i - 1] && i < orden.length - 1){
+        while(orden[i]== orden[i - 1] && i < orden.length - 1){
             i++
         }
         retorno = orden[i]
-        console.log[retorno]
+    }else{
+        retorno = undefined;
     }
     return retorno
-   
 }
 
 
