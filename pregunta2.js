@@ -14,8 +14,22 @@
     pants: 5,
   }
 
+const VENTA_EXISTOSA = 200;
+const VENTA_FALLIDA = 500;
+
 const sale = function (article, cant){
-  
+  let retorno = "";
+  if(article in inventory){
+    if(inventory[article] >= cant){
+        inventory[article] = inventory[article] - cant;
+        retorno = VENTA_EXISTOSA;
+    }else{
+      retorno = VENTA_FALLIDA;
+    }
+  }else{
+    retorno = VENTA_FALLIDA;
+  }
+  return retorno;
 }
 
 // TESTS (no modificar)
