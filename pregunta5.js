@@ -26,7 +26,7 @@ function changeLabel(beerList){
   listAux = beerList.map(list => list.label.split("/"));
   
   for (let i = 0; i < listAux.length; i++) {
-    beerList[i].label = REPOS + listAux[i][listAux[i].length - 2]+ "/" + beerList[i].name + "." + listAux[i][listAux[i].length - 1].split(".").pop()
+    beerList[i].label = REPOS + listAux[i][listAux[i].length - 2]+ "/" + beerList[i].name.replace(" ", "_") + "." + listAux[i][listAux[i].length - 1].split(".").pop()
   } 
   console.log(beerList[0])
   return beerList
