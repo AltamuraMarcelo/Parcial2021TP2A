@@ -27,7 +27,7 @@
         inventors[posicion].discoveries = discover;
       }
       
-      //console.log(inventors[posicion].discoveries) //prueba
+      console.log(inventors[posicion].discoveries) //prueba
       return inventors;
   }
 

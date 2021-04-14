@@ -20,13 +20,13 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 const REPOS = "https://tecnoshare.sharepoint.com/sites/beer/"
-const FORMAT = ".png"
 
 changeLabel(beers)
 function changeLabel(beerList){
-  listAux = beerList.map(list => list.label.split("/"))
+  listAux = beerList.map(list => list.label.split("/"));
+  
   for (let i = 0; i < listAux.length; i++) {
-    beerList[i].label = REPOS + listAux[i][listAux[i].length - 2]+ "/" + beerList[i].name + FORMAT
+    beerList[i].label = REPOS + listAux[i][listAux[i].length - 2]+ "/" + beerList[i].name + "." + listAux[i][listAux[i].length - 1].split(".").pop()
   } 
   console.log(beerList[0])
   return beerList
